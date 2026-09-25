@@ -8,13 +8,15 @@ function real_dir() {
 SCRIPT_FOLDER=$(real_dir "$(dirname "$0")")
 
 BASE_DIR=${SCRIPT_FOLDER}/../../../..
-SOLUTION_FOLDER=${BASE_DIR}/sprint2/problems/join_game/solution
+SOLUTION_FOLDER=${BASE_DIR}
 
-bash ${SCRIPT_FOLDER}/build.sh || exit 1
+bash "${SCRIPT_FOLDER}/build.sh" || exit 1
 
-source ${BASE_DIR}/.venv/bin/activate
+source "${BASE_DIR}/.venv/bin/activate"
 
-export CONFIG_PATH=${SOLUTION_FOLDER}/data/config.json
+export CONFIG_PATH="${SOLUTION_FOLDER}/data/config.json"
 export IMAGE_NAME=join_game
 
-pytest --workers auto --junitxml=${BASE_DIR}/join_game.xml ${BASE_DIR}/cpp-backend-tests-practicum/tests/test_s02_join_game.py
+pytest --workers auto \
+  --junitxml="${BASE_DIR}/join_game.xml" \
+  "${BASE_DIR}/test_try0/tests/test_s02_join_game.py"
