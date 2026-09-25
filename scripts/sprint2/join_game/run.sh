@@ -17,6 +17,6 @@ source "${BASE_DIR}/.venv/bin/activate"
 export CONFIG_PATH="${SOLUTION_FOLDER}/data/config.json"
 export IMAGE_NAME=join_game
 
-pytest --workers auto \
+pytest \
   --junitxml="${BASE_DIR}/join_game.xml" \
   "${BASE_DIR}/test_try0/tests/test_s02_join_game.py"
