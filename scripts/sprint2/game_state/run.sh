@@ -8,7 +8,7 @@ function real_dir() {
 SCRIPT_FOLDER=$(real_dir "$(dirname "$0")")
 
 BASE_DIR=${SCRIPT_FOLDER}/../../../..
-SOLUTION_FOLDER=${BASE_DIR}/sprint2/problems/game_state/solution
+SOLUTION_FOLDER=${BASE_DIR}
 
 bash ${SCRIPT_FOLDER}/build.sh || exit 1
 
